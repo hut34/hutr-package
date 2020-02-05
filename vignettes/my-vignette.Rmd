@@ -1,0 +1,54 @@
+---
+title: "How to Hut"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+```{r, echo = FALSE}
+  knitr::opts_chunk$set(
+    eval = FALSE,
+    echo = TRUE
+  )
+```
+The first step is to load the hutr package.
+```{r setup}
+library(hutr)
+```
+The next step is to connect R to the hut. The user is prompted via the console to input the URL of the hut and then copy and paste the access token and the ID token from the website.
+```{r}
+initiate_hut()
+```
+We can check what datasets are available.
+```{r}
+View(view_all_datasets ())
+```
+And purchase one of those datasets.
+```{r}
+purchase_dataset (DatasetNumber=1)
+```
+This should now appear in our list of purchased datasets.
+```{r}
+View(view_purchased_datasets ())
+```
+This can be downloaded
+```{r}
+myPurchasedData <- download_purchased_dataset (DatasetNumber=1)
+View(myPurchasedData)
+```
+We can also upload a data frame to the hut as a dataset. Here we will use the mtcars dataset as an example.
+```{r}
+upload_dataset(mtcars, Name="mtcars", Description="Data about cars")
+```
+This should now appear in the list of available data.
+```{r}
+View(view_all_datasets ())
+```

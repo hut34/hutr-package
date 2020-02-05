@@ -1,0 +1,25 @@
+Package: hutr
+Type: Package
+Title: R integration for Hut34 data huts
+Version: 0.0.0.9000
+Authors@R: as.person(c(
+    "Peter Godbolt <peter@hut34.io> [aut, cre]", 
+    "Jon Brock <jon@frankl.io> [aut]"
+  ))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: Allows R users to sign into Hut34 data hut and push and
+    pull data to the hut from within the R environment.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    httr,
+    jsonlite,
+    magrittr
+URL: https://hut34.io/
+RoxygenNote: 7.0.2
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
