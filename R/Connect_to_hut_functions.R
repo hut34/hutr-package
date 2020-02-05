@@ -134,16 +134,3 @@ check_url_and_tokens <- function() {
   }
   bCheck
 }
-
-
-# Sends a post request to test whether connections has been established
-check_connection <- function() {
-  if (check_url_and_tokens()) {
-    returnMessage <- make_post_request(Endpoint = "/alive")
-    if (returnMessage$status_code == 200) {
-      cat(paste0("Status Code: 200. Successfully connected to ", returnMessage$url))
-    } else {
-      cat(paste0("Status Code: ", returnMessage$status_code, ". Failed to connect to ", returnMessage$url))
-    }
-  }
-}
