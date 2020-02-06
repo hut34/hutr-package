@@ -13,13 +13,15 @@
 #' @examples
 #' make_post_request(Endpoint = "/alive")
 #' make_post_request(Endpoint = "/user/downloadFile", Body = paste0("\"dataSetId\":\"", myDatasetID,"\""))
-make_post_request <- function(Endpoint, Body = "EMPTY") {
-  if (Body == "EMPTY") {
-    bodyPlusTokens <- paste0("{\"accessToken\":\"", myAccessToken, "\", \"token\":\"", myIdToken, "\"}")
+make_post_request <- function (Endpoint, Body="EMPTY") {
+  if (Body=="EMPTY") {
+    bodyPlusTokens <- paste0 ('{"accessToken":"', myAccessToken, '", "token":"', myIdToken, '"}')
   } else {
-    bodyPlusTokens <- paste0("{\"accessToken\":\"", myAccessToken, "\", \"token\":\"", myIdToken, "\", ", Body,
-                             "}")
+    bodyPlusTokens <- paste0 ('{"accessToken":"', myAccessToken, '", "token":"', myIdToken, '", ', Body,'}')
   }
-  httr::POST(paste0(myEndpointUrl, Endpoint), add_headers(`Content-Type` = "application/json"), body = bodyPlusTokens,
-             encode = "json", verbose())
+  httr::POST(paste0(myEndpointUrl, Endpoint),
+             add_headers("Content-Type" = "application/json"),
+             body = bodyPlusTokens,
+             encode = "json",
+             verbose())
 }

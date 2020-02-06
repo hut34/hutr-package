@@ -12,10 +12,13 @@ Description: Allows R users to sign into Hut34 data hut and push and
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    httr
 Imports: 
-    httr,
     jsonlite,
-    magrittr
+    magrittr,
+    dplyr,
+    janitor
 URL: https://hut34.io/
 RoxygenNote: 7.0.2
 Suggests: 
