@@ -13,10 +13,10 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: 
-    httr
-Imports: 
+    httr,
     jsonlite,
-    magrittr,
+    magrittr
+Imports: 
     dplyr,
     janitor
 URL: https://hut34.io/
