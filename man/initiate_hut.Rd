@@ -20,4 +20,5 @@ Finally it sends a post request to check the connection.
 }
 \examples{
 initiate_hut()
+
 }

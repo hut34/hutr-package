@@ -24,4 +24,5 @@ This function allows the user to download a dataset by specifying its number in 
 \examples{
 download_dataset (2, "/user/getDatasets")
 download_dataset (DatasetNumber = 3, Endpoint = "/user/getDatasets")
+
 }

@@ -40,4 +40,5 @@ This function adds metadata to a dataframe and uploads it to the hut.
 }
 \examples{
 upload_dataset (Data="myData", Name="Some nice data", Description="This data took ages to collect!", Parent="hfud945r3bdhnsgfte", Custodial=FALSE)
+
 }

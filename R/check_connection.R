@@ -9,6 +9,8 @@
 #'
 #' @examples
 #' check_connection()
+#' 
+#' @export
 check_connection <- function() {
   if (check_url_and_tokens()) {
     returnMessage <- make_post_request(Endpoint = "/alive")

@@ -7,6 +7,9 @@
 #'
 #' @examples
 #' open_hut_in_browser ()
+#' 
+#' @export
+#' 
 open_hut_in_browser <- function () {
   if (exists("myHutUrl")) {
     BROWSE(myHutUrl)

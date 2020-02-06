@@ -18,4 +18,5 @@ This function asks for the URL of the data hut, input via the console.
 }
 \examples{
 get_hut_url()
+
 }

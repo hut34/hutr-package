@@ -11,6 +11,8 @@
 #' @examples
 #' download_purchased_dataset (2)
 #' download_purchased_dataset (DatasetNumber = 3)
+#' 
+#' @export
 download_purchased_dataset <- function(DatasetNumber) {
   download_dataset (DatasetNumber=DatasetNumber, Endpoint="/user/getUploadedDatasets")
 }

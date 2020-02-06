@@ -24,4 +24,5 @@ This function sends a post request to the hut after first adding tokens to the b
 \examples{
 make_post_request(Endpoint = "/alive")
 make_post_request(Endpoint = "/user/downloadFile", Body = paste0("\"dataSetId\":\"", myDatasetID,"\""))
+
 }

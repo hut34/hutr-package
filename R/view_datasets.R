@@ -14,6 +14,9 @@
 #' view_datasets("/user/getUploadedDatasets")
 #'
 #' @importFrom magrittr %>%
+#' 
+#' @export
+#' 
 view_datasets <- function(Endpoint) {
   make_post_request(Endpoint = Endpoint) %>% 
     content(., "text") %>% 

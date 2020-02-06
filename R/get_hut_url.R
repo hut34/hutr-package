@@ -9,6 +9,8 @@
 #'
 #' @examples
 #' get_hut_url()
+#' 
+#' @export
 get_hut_url <- function() {
   inputUrl <- readline(prompt = "Enter URL of your data hut, or 'local' if running on your machine: ")
   inputUrl <- as.character(inputUrl)

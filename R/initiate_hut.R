@@ -11,6 +11,9 @@
 #'
 #' @examples
 #' initiate_hut()
+#' 
+#' @export
+#' 
 initiate_hut <- function() {
   get_hut_url()
   get_tokens()

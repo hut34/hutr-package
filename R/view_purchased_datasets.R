@@ -10,6 +10,9 @@
 #'
 #' @examples
 #' view_purchased_datasets()
+#' 
+#' @export
+#' 
 view_purchased_datasets <- function() {
   view_datasets(Endpoint = "/user/getUploadedDatasets")
 }

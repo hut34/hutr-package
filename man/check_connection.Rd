@@ -18,4 +18,5 @@ Sends a post request to the /alive endpoint.
 }
 \examples{
 check_connection()
+
 }

@@ -16,6 +16,9 @@
 #'
 #' @examples
 #' upload_dataset (Data="myData", Name="Some nice data", Description="This data took ages to collect!", Parent="hfud945r3bdhnsgfte", Custodial=FALSE)
+#' 
+#' @export
+#' 
 upload_dataset <- function(Data, Name, Description, Parent = "No parent", Custodial = TRUE, Price = 3.14, Image = "DEFAULT") {
     if (Image=="DEFAULT") {
         imageURL <- "https://images.unsplash.com/photo-1533279443086-d1c19a186416?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80"

@@ -15,4 +15,5 @@ This function switches the user from R to their default browser and takes them t
 }
 \examples{
 open_hut_in_browser ()
+
 }

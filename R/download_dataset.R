@@ -13,6 +13,8 @@
 #' @examples
 #' download_dataset (2, "/user/getDatasets")
 #' download_dataset (DatasetNumber = 3, Endpoint = "/user/getDatasets")
+#' 
+#' @export
 download_dataset <- function(DatasetNumber, Endpoint) {
   myDatasetID <- get_datasetID(DatasetNumber=DatasetNumber, Endpoint=Endpoint)
   myJsonObject <- make_post_request(Endpoint = "/user/downloadFile",

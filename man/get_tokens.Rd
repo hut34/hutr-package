@@ -17,4 +17,5 @@ Users are prompted to copy and paste access and ID tokens from the hut website a
 }
 \examples{
 get_tokens()
+
 }

@@ -21,4 +21,5 @@ This function allows the user to download a dataset by specifying its number in 
 \examples{
 download_uploaded_dataset (2)
 download_uploaded_dataset (DatasetNumber = 3)
+
 }

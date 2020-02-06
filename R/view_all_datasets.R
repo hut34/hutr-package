@@ -11,7 +11,8 @@
 #' @examples
 #' view_all_datasets()
 #'
-# View all datasets in a table -
+#' @export
+#'
 view_all_datasets <- function() {
   view_datasets(Endpoint = "/user/getDatasets")
 }

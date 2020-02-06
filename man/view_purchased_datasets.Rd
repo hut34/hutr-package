@@ -19,4 +19,5 @@ This function calls the hut and returns a dataframe of all purchased data
 }
 \examples{
 view_purchased_datasets()
+
 }

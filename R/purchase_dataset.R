@@ -13,6 +13,9 @@
 #' @examples
 #' purchase_dataset (2)
 #' purchase_dataset (DatasetNumber = 3, Download = TRUE)
+#' 
+#' @export
+#' 
 purchase_dataset <- function(DatasetNumber, Download = FALSE) {
   myDatasetID <- get_datasetID(DatasetNumber = DatasetNumber, Endpoint = "/user/getDatasets")
   make_post_request(Endpoint = "/user/purchase", Body = paste0("\"dataSetId\":\"", myDatasetID, "\""))

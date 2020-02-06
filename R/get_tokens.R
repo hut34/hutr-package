@@ -8,6 +8,9 @@
 #'
 #' @examples
 #' get_tokens()
+#' 
+#' @export
+#' 
 get_tokens <- function() {
   if (exists("myHutUrl") == FALSE) {
     cat("Hut URL has not been specified. Run get_hut_url before calling get_tokens")

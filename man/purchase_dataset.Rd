@@ -24,4 +24,5 @@ This function allows the user to purchase a dataset by specifying its number in 
 \examples{
 purchase_dataset (2)
 purchase_dataset (DatasetNumber = 3, Download = TRUE)
+
 }

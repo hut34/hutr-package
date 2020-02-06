@@ -13,6 +13,9 @@
 #' @examples
 #' make_post_request(Endpoint = "/alive")
 #' make_post_request(Endpoint = "/user/downloadFile", Body = paste0("\"dataSetId\":\"", myDatasetID,"\""))
+#' 
+#' @export
+#' 
 make_post_request <- function (Endpoint, Body="EMPTY") {
   if (Body=="EMPTY") {
     bodyPlusTokens <- paste0 ('{"accessToken":"', myAccessToken, '", "token":"', myIdToken, '"}')
