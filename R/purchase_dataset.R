@@ -17,8 +17,7 @@ purchase_dataset <- function(DatasetNumber, Download = FALSE) {
   myDatasetID <- get_datasetID(DatasetNumber = DatasetNumber, Endpoint = "/user/getDatasets")
   make_post_request(Endpoint = "/user/purchase", Body = paste0("\"dataSetId\":\"", myDatasetID, "\""))
   if (Download == TRUE) {
-    myJsonObject <- make_post_request(Endpoint = "/user/downloadFile", Body = paste0("\"dataSetId\":\"", myDatasetID,
-                                                                                     "\""))
+    myJsonObject <- make_post_request(Endpoint = "/user/downloadFile", Body = paste0("\"dataSetId\":\"", myDatasetID, "\""))
     extract_dataframe_from_json(myJsonObject)
   }
 }
