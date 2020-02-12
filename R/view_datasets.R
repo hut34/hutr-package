@@ -17,9 +17,11 @@
 #' 
 #' @export
 #' 
-view_datasets <- function(Endpoint) {
-  make_post_request(Endpoint = Endpoint) %>% 
-    content(., "text") %>% 
-    jsonlite::fromJSON() %>% 
-    .$data
+view_datasets <- function (Endpoint = "/user/getUploadedDatasets") {
+  myObject <- make_post_request (Endpoint=Endpoint) %>%
+    content(., "text") %>%
+    jsonlite::fromJSON()
+  myData <- myObject$data
+  id <- myObject$id
+  cbind(myData, id)
 }
