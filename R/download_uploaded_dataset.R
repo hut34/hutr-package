@@ -12,6 +12,8 @@
 #' download_uploaded_dataset (2)
 #' download_uploaded_dataset (DatasetNumber = 3)
 #' 
+#' @importFrom magrittr %>%
+#' 
 #' @export
 download_uploaded_dataset <- function(DatasetNumber) {
   download_dataset (DatasetNumber=DatasetNumber, Endpoint="/user/getDatasets")
