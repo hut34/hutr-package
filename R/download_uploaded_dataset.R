@@ -16,5 +16,6 @@
 #' 
 #' @export
 download_uploaded_dataset <- function(DatasetNumber) {
-  download_dataset (DatasetNumber=DatasetNumber, Endpoint="/user/getDatasets")
+  get_datasetID (DatasetNumber=DatasetNumber, Endpoint="/user/getDatasets") %>%
+    download_dataset (.)
 }
