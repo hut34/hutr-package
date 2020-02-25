@@ -4,7 +4,7 @@
 \alias{view_datasets}
 \title{view_datasets}
 \usage{
-view_datasets(Endpoint)
+view_datasets(Endpoint = "/user/getUploadedDatasets")
 }
 \arguments{
 \item{Endpoint}{A string}

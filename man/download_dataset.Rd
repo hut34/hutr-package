@@ -4,12 +4,10 @@
 \alias{download_dataset}
 \title{download_dataset}
 \usage{
-download_dataset(DatasetNumber, Endpoint)
+download_dataset(DatasetID)
 }
 \arguments{
-\item{DatasetNumber}{An integer.}
-
-\item{Endpoint}{A string}
+\item{DatasetID}{A string}
 }
 \value{
 Returns a dataframe.
@@ -18,11 +16,9 @@ Returns a dataframe.
 \code{download_dataset} downloads a dataset.
 }
 \details{
-This function allows the user to download a dataset by specifying its number in the dataframe of available datsets.
- User must also specify the endpoint.
+This function allows the user to download a dataset by specifying its DatasetID
 }
 \examples{
-download_dataset (2, "/user/getDatasets")
-download_dataset (DatasetNumber = 3, Endpoint = "/user/getDatasets")
+df <- download_dataset ("SPPeJC1VInG5VMXN8M6D")
 
 }
