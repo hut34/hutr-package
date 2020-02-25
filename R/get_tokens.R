@@ -18,10 +18,20 @@ get_tokens <- function() {
     if (myHutUrl != "http://localhost:3000" && check_hut_url_valid(myHutUrl) == FALSE) {
       cat("Invalid URL. Must begin with \"https://\" and end in \".web.app\"")
     } else {
-      invisible(readline(prompt = "Copy Access Token. Press [enter] to go to Hut website."))
-      httr::BROWSE(myHutUrl)
-      assign("myAccessToken", readline(prompt = "Paste access token: "), envir = .GlobalEnv)
-      assign("myIdToken", readline(prompt = "Paste ID token: "), envir = .GlobalEnv)
+      
+      accessToken <- invisible(readline(prompt = "Paste Access Token or press [enter] to go to Hut website: "))
+      if (accessToken=="") {
+        httr::BROWSE(myHutUrl)
+        accessToken <- invisible(readline(prompt = "Paste Access Token: "))
+      }
+      assign("myAccessToken", accessToken, envir = .GlobalEnv)
+      
+      idToken <- invisible(readline(prompt = "Paste ID Token or press [enter] to go to Hut website: "))
+      if (idToken=="") {
+        httr::BROWSE(myHutUrl)
+        idToken <- invisible(readline(prompt = "Paste ID Token: "))
+      }
+      assign("myIdToken", idToken, envir = .GlobalEnv)
     }
   }
 }
