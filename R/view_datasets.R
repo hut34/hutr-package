@@ -23,5 +23,7 @@ view_datasets <- function (Endpoint = "/user/getUploadedDatasets") {
     jsonlite::fromJSON()
   myData <- myObject$data
   id <- myObject$id
-  cbind(myData, id)
+  myData <- cbind(myData, id)
+  keeps <- c("id", "name", "description", "ENTRPPrice")
+  myData <- myData[keeps]
 }
