@@ -11,11 +11,12 @@
 #' @param Custodial A Boolean
 #' @param Price A number
 #' @param Image A string
+#' @param Rooms A string or string vector
 #'
 #' @return Returns the reply to the post request as a list - I think!!!
 #'
 #' @examples
-#' upload_dataset (Data="myData", Name="Some nice data", Description="This data took ages to collect!", Parent="hfud945r3bdhnsgfte", Custodial=FALSE)
+#' upload_dataset (Data="myData", Name="Some nice data", Description="This data took ages to collect!", Parent="hfud945r3bdhnsgfte", Custodial=FALSE, Rooms = c("bmnkbjjndfnAJDK", "jbjbdifjSJHSOFJsJ"))
 #' 
 #' @export
 #' 
@@ -25,10 +26,16 @@ upload_dataset <- function(Data, Name, Description, Parent = "No parent", Custod
     } else {
         imageURL <- Image
     }
-    make_post_request(Endpoint = "/admin/createDataset", Body = paste0("\"fromR\":\"TRUE\", \"data\": {\"custodial\": \"",
-        Custodial, "\"", ", \"parentId\": \"", Parent, "\"", ", \"rooms\": \"", Rooms, "\"", ", \"ENTRPPrice\": \"", Price, "\"", ", \"description\": \"",
-        Description, "\"", ", \"name\": \"", Name, "\"", ", \"coverImage\": \"", imageURL, "\"", ", \"data\": ", toJSON(Data,
-            dataframe = "columns"), "}"))
+    make_post_request(Endpoint = "/admin/createDataset",
+                      Body = paste0("\"fromR\":\"TRUE\", \"data\": {",
+                                    "\"custodial\": \"", Custodial, "\"", 
+                                    ", \"parentId\": \"", Parent, "\"", 
+                                    ", \"rooms\": [", paste(shQuote(myRooms, type="cmd"), collapse=", "), "]", 
+                                    ", \"ENTRPPrice\": \"", Price, "\"", 
+                                    ", \"description\": \"", Description, "\"", 
+                                    ", \"name\": \"", Name, "\"", 
+                                    ", \"coverImage\": \"", imageURL, "\"", 
+                                    ", \"data\": ", toJSON(Data, dataframe = "columns"), "}"))
 }
 
 
