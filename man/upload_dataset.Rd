@@ -8,8 +8,9 @@ upload_dataset(
   Data,
   Name,
   Description,
-  Parent = "No parent",
+  Parent = "",
   Custodial = TRUE,
+  Rooms = "",
   Price = 3.14,
   Image = "DEFAULT"
 )
@@ -25,6 +26,8 @@ upload_dataset(
 
 \item{Custodial}{A Boolean}
 
+\item{Rooms}{A string or string vector}
+
 \item{Price}{A number}
 
 \item{Image}{A string}
@@ -39,6 +42,6 @@ Returns the reply to the post request as a list - I think!!!
 This function adds metadata to a dataframe and uploads it to the hut.
 }
 \examples{
-upload_dataset (Data="myData", Name="Some nice data", Description="This data took ages to collect!", Parent="hfud945r3bdhnsgfte", Custodial=FALSE)
+upload_dataset (Data="myData", Name="Some nice data", Description="This data took ages to collect!", Parent="hfud945r3bdhnsgfte", Custodial=FALSE, Rooms = c("bmnkbjjndfnAJDK", "jbjbdifjSJHSOFJsJ"))
 
 }

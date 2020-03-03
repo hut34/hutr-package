@@ -14,5 +14,5 @@
 #' @export
 #' 
 view_purchased_datasets <- function() {
-  view_datasets(Endpoint = "/user/getUploadedDatasets")
+  View(get_datasets(Endpoint = "/user/getPurchasedDatasets"))
 }
