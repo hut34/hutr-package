@@ -19,16 +19,20 @@
 #' 
 #' @export
 #' 
-upload_dataset <- function(Data, Name, Description, Parent = "No parent", Custodial = TRUE, Price = 3.14, Image = "DEFAULT") {
+upload_dataset <- function(Data, Name, Description, Parent = "No parent", Custodial = TRUE, Rooms = "DEFAULT", Price = 3.14, Image = "DEFAULT") {
     if (Image=="DEFAULT") {
         imageURL <- "https://images.unsplash.com/photo-1533279443086-d1c19a186416?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80"
     } else {
         imageURL <- Image
     }
     make_post_request(Endpoint = "/admin/createDataset", Body = paste0("\"fromR\":\"TRUE\", \"data\": {\"custodial\": \"",
-        Custodial, "\"", ", \"parentId\": \"", Parent, "\"", ", \"ENTRPPrice\": \"", Price, "\"", ", \"description\": \"",
+        Custodial, "\"", ", \"parentId\": \"", Parent, "\"", ", \"rooms\": \"", Rooms, "\"", ", \"ENTRPPrice\": \"", Price, "\"", ", \"description\": \"",
         Description, "\"", ", \"name\": \"", Name, "\"", ", \"coverImage\": \"", imageURL, "\"", ", \"data\": ", toJSON(Data,
             dataframe = "columns"), "}"))
 }
+
+
+
+
 
 
