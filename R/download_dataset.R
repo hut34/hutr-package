@@ -6,15 +6,17 @@
 #'  
 #' @param DatasetID A string
 #'
-#' @return Returns a dataframe.
+#' @return Returns a list
 #'
 #' @examples
 #' df <- download_dataset ("SPPeJC1VInG5VMXN8M6D")
 #' 
 #' @export
 download_dataset <- function(DatasetID) {
-  myJsonObject <- make_post_request(Endpoint = "/user/downloadFile",
-                                    Body = paste0('"dataSetId": "', DatasetID, '"'))
-  extract_dataframe_from_json(myJsonObject)
+  myDataObject <- download_data_object(DatasetID)
+  
+  myDataframe <- as.data.frame(myDataObject$data, stringsAsFactors = FALSE, row.names = FALSE)
+  colnames(myDataframe) <- myDataObject$header$name
+  transform_dataframe_columns_to_numeric(myDataframe)
 }
 
