@@ -17,6 +17,8 @@ download_dataset <- function(DatasetID) {
   
   myDataframe <- as.data.frame(myDataObject$data, stringsAsFactors = FALSE, row.names = FALSE)
   colnames(myDataframe) <- myDataObject$header$name
-  transform_dataframe_columns_to_numeric(myDataframe)
+  df <- transform_dataframe_columns_to_numeric(myDataframe)
+  
+  myList <- list("df"=df, "names"=myDataObject$header$name, "description"=myDataObject$header$description, "datasetId"=DatasetID)
 }
 
