@@ -16,9 +16,7 @@ Depends:
     httr,
     jsonlite,
     magrittr
-Imports: 
-    dplyr,
-    janitor
+Imports:
 URL: https://hut34.io/
 RoxygenNote: 7.0.2
 Suggests: 

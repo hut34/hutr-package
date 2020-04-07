@@ -10,7 +10,7 @@ download_dataset(DatasetID)
 \item{DatasetID}{A string}
 }
 \value{
-Returns a dataframe.
+Returns a list
 }
 \description{
 \code{download_dataset} downloads a dataset.
@@ -19,6 +19,6 @@ Returns a dataframe.
 This function allows the user to download a dataset by specifying its DatasetID
 }
 \examples{
-df <- download_dataset ("SPPeJC1VInG5VMXN8M6D")
+myData <- download_dataset ("SPPeJC1VInG5VMXN8M6D")
 
 }

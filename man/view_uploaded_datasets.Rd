@@ -14,8 +14,7 @@ The metadata of all uploaded data is returned as a dataframe.
 }
 \details{
 This function calls the hut and returns a dataframe of all uploaded data
-  i.e., data that was uploaded by another user but the current user has
-  immediate access to.
+  i.e., data that was uploaded by t he current user.
 }
 \examples{
 view_uploaded_datasets()

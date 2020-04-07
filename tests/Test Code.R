@@ -9,7 +9,7 @@ library(hutr)
 initiate_hut()
 
 #browse the datasets available in the hut
-View(view_all_datasets ())
+view_all_datasets ()
 
 #upload a data frame to the hut as a dataset - simple example using car dataset built in to R
 upload_dataset(mtcars, Name="mtcars", Description="Data about cars")
