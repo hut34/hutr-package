@@ -24,6 +24,4 @@ get_datasets <- function (Endpoint) {
   myData <- myObject$data
   id <- myObject$id
   myData <- cbind(myData, id)
-  #keeps <- c("id", "name", "description", "ENTRPPrice")
-  #myData <- myData[keeps]
 }

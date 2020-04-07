@@ -14,5 +14,8 @@
 #' @export
 #'
 view_all_datasets <- function() {
-  View(get_datasets(Endpoint = "/user/getDatasetsToPurchase"))
+  AvailableDatasets <- get_datasets(Endpoint = "/user/getDatasetsToPurchase")
+  keeps <- c("id", "name", "description", "ENTRPPrice")
+  AvailableDatasets <- AvailableDatasets[keeps]
+  View(AvailableDatasets)
 }
