@@ -4,7 +4,7 @@
 \alias{get_datasets}
 \title{get_datasets}
 \usage{
-get_datasets(Endpoint = "/user/getUploadedDatasets")
+get_datasets(Endpoint)
 }
 \arguments{
 \item{Endpoint}{A string}

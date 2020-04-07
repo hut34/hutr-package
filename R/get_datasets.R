@@ -17,13 +17,13 @@
 #' 
 #' @export
 #' 
-get_datasets <- function (Endpoint = "/user/getUploadedDatasets") {
+get_datasets <- function (Endpoint) {
   myObject <- make_post_request (Endpoint=Endpoint) %>%
     content(., "text") %>%
     jsonlite::fromJSON()
   myData <- myObject$data
   id <- myObject$id
   myData <- cbind(myData, id)
-  keeps <- c("id", "name", "description", "ENTRPPrice")
-  myData <- myData[keeps]
+  #keeps <- c("id", "name", "description", "ENTRPPrice")
+  #myData <- myData[keeps]
 }

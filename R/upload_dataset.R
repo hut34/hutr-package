@@ -20,8 +20,18 @@
 #' 
 #' @export
 #' 
-upload_dataset <- function(Data, Name, Description, Parent = "", Custodial = TRUE, Rooms = "", Price = 3.14, Image = "DEFAULT") {
-    if (Image=="DEFAULT") {
+upload_dataset <- function(Data, Name="", Description="", Parent = "", Custodial = TRUE, Rooms = "", Price = 3.14, Image = "") {
+    if (Name=="") {
+        myName <- invisible(readline(prompt = "Please give your dataset a name: "))
+    } else {
+        myName <- Name
+    }
+    if (Description=="") {
+        myDescription <- invisible(readline(prompt = "Please give a description of your dataset: "))
+    } else {
+        myDescription <- Description
+    }
+    if (Image=="") {
         imageURL <- "https://images.unsplash.com/photo-1533279443086-d1c19a186416?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80"
     } else {
         imageURL <- Image
@@ -32,8 +42,8 @@ upload_dataset <- function(Data, Name, Description, Parent = "", Custodial = TRU
                                     ", \"parentId\": \"", Parent, "\"", 
                                     ", \"rooms\": [", paste(shQuote(Rooms, type="cmd"), collapse=", "), "]", 
                                     ", \"ENTRPPrice\": \"", Price, "\"", 
-                                    ", \"description\": \"", Description, "\"", 
-                                    ", \"name\": \"", Name, "\"", 
+                                    ", \"description\": \"", myDescription, "\"", 
+                                    ", \"name\": \"", myName, "\"", 
                                     ", \"coverImage\": \"", imageURL, "\"", 
                                     ", \"data\": ", toJSON(Data, dataframe = "columns"), "}"))
 }
