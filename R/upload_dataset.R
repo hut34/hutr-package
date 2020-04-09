@@ -36,7 +36,7 @@ upload_dataset <- function(Data, Name="", Description="", Parent = "", Custodial
     } else {
         imageURL <- Image
     }
-    make_post_request(Endpoint = "/admin/createDataset",
+    make_post_request(Endpoint = "/user/createDataset",
                       Body = paste0("\"fromR\":\"TRUE\", \"data\": {",
                                     "\"custodial\": \"", Custodial, "\"", 
                                     ", \"parentId\": \"", Parent, "\"", 

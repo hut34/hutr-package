@@ -4,7 +4,7 @@
 #'
 #' This function allows the user to purchase a dataset by specifying its DatasetID.
 #'
-#' @param DatasetID An string.
+#' @param DatasetID A string.
 #'
 #' @examples
 #' acquire_dataset ("shdurr8nf80SLK")
