@@ -20,7 +20,7 @@
 #' 
 #' @export
 #' 
-upload_dataset <- function(Data, Name="", Description="", Parent = "", Custodial = TRUE, Rooms = "", Price = 3.14, Image = "") {
+upload_dataset <- function(Data, Name="", Description="", Parent = "", Custodial = TRUE, Rooms = "", Price = 0.314, Image = "") {
     if (Name=="") {
         myName <- invisible(readline(prompt = "Please give your dataset a name: "))
     } else {
