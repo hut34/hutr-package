@@ -41,7 +41,7 @@ upload_dataset <- function(Data, Name="", Description="", Parent = "", Custodial
                                     "\"custodial\": \"", Custodial, "\"", 
                                     ", \"parentId\": \"", Parent, "\"", 
                                     ", \"rooms\": [", paste(shQuote(Rooms, type="cmd"), collapse=", "), "]",
-                                    ", \"claims\": [\"\"]",
+                                    ", \"claims\": []",
                                     ", \"ENTRPPrice\": \"", Price, "\"", 
                                     ", \"description\": \"", myDescription, "\"", 
                                     ", \"name\": \"", myName, "\"", 
